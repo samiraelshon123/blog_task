@@ -25,16 +25,20 @@
           </div>
 
         </div>
-        <div class="card-header py-3 d-flex">
-            <div class="ml-auto">
-              <a href="{{url('dashboard/add_user')}}" class="btn btn-primary">
-                  <span class="icon-text-white-50">
-                      <i class="fa fa-plus"></i>
-                  </span>
-                  <span class="text">Add New User</span>
-              </a>
+        @if ((auth()->user()->type) == 'admin')
+            
+            <div class="card-header py-3 d-flex">
+                <div class="ml-auto">
+                <a href="{{url('dashboard/add_user')}}" class="btn btn-primary">
+                    <span class="icon-text-white-50">
+                        <i class="fa fa-plus"></i>
+                    </span>
+                    <span class="text">Add New User</span>
+                </a>
+                </div>
             </div>
-          </div>
+        @endif
+
           <div class="table-responsive">
             <table class="table table-hover">
               <thead>
